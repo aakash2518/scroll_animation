@@ -118,8 +118,8 @@ export default function IndustrialHero() {
           
           <div className="overflow-hidden mb-6">
             <div className="hero-reveal translate-y-full opacity-0 flex items-center gap-4 will-change-transform">
-              <div className="w-12 h-[1px] bg-[#0A4174]"></div>
-              <span className="text-[#0A4174] font-bold tracking-[0.2em] text-xs uppercase">
+              <div className="w-12 h-[1px] bg-[#0077B6]"></div>
+              <span className="text-[#0077B6] font-bold tracking-[0.2em] text-xs uppercase">
                 TEJ AUTOSYSTEM PVT. LTD. | INDUSTRIAL AUTOMATION
               </span>
             </div>
@@ -128,7 +128,7 @@ export default function IndustrialHero() {
           <div className="overflow-hidden mb-8">
             <h1 className="hero-reveal translate-y-full opacity-0 font-display font-bold text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.95] tracking-tight text-white will-change-transform">
               <span className="block">ENGINEERING</span>
-              <span className="block text-[#7BBDE8]">THAT MOVES</span>
+              <span className="block text-gray-400">THAT MOVES</span>
               <span className="block">INDUSTRY.</span>
             </h1>
           </div>
@@ -141,7 +141,7 @@ export default function IndustrialHero() {
           
           <div className="overflow-hidden">
             <div className="hero-reveal translate-y-full opacity-0 flex flex-col sm:flex-row items-start sm:items-center gap-6 will-change-transform">
-              <Link href="#solutions" className="group relative overflow-hidden bg-[#0A4174] text-white px-8 py-4 font-bold tracking-widest text-sm w-full sm:w-auto text-center border border-[#0A4174] transition-colors hover:bg-transparent">
+              <Link href="#solutions" className="group relative overflow-hidden bg-[#0077B6] text-white px-8 py-4 font-bold tracking-widest text-sm w-full sm:w-auto text-center border border-[#0077B6] transition-colors hover:bg-transparent">
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   EXPLORE SOLUTIONS 
                   <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

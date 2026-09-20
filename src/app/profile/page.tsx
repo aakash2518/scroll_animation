@@ -19,7 +19,7 @@ export default function ProfilePage() {
         </div>
         
         <div className="relative z-10 text-center container mx-auto px-6">
-          <h4 className="text-[#49769F] font-bold tracking-widest text-sm mb-4 uppercase">Excellence & Precision</h4>
+          <h4 className="text-[#00B4D8] font-bold tracking-widest text-sm mb-4 uppercase">Excellence & Precision</h4>
           <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase drop-shadow-2xl">
             Company Profile
           </h1>
@@ -34,15 +34,15 @@ export default function ProfilePage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
             <div className="p-8 border border-white/5 bg-[#0a0a0a]">
-              <h3 className="text-[#49769F] font-bold text-2xl mb-4">Vision</h3>
+              <h3 className="text-[#00B4D8] font-bold text-2xl mb-4">Vision</h3>
               <p className="text-gray-500">To be the global benchmark in industrial automation and material handling.</p>
             </div>
             <div className="p-8 border border-white/5 bg-[#0a0a0a]">
-              <h3 className="text-[#49769F] font-bold text-2xl mb-4">Mission</h3>
+              <h3 className="text-[#00B4D8] font-bold text-2xl mb-4">Mission</h3>
               <p className="text-gray-500">Deliver cutting-edge, reliable, and custom engineering solutions.</p>
             </div>
             <div className="p-8 border border-white/5 bg-[#0a0a0a]">
-              <h3 className="text-[#49769F] font-bold text-2xl mb-4">Values</h3>
+              <h3 className="text-[#00B4D8] font-bold text-2xl mb-4">Values</h3>
               <p className="text-gray-500">Integrity, Precision, Innovation, and Patron-centric approach.</p>
             </div>
           </div>

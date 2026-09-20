@@ -7,7 +7,7 @@ export default function CareerPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent"></div>
         
         <div className="relative z-10 text-center container mx-auto px-6 mt-16">
-          <h4 className="text-[#49769F] font-bold tracking-widest text-sm mb-4 uppercase">Join Our Team</h4>
+          <h4 className="text-[#00B4D8] font-bold tracking-widest text-sm mb-4 uppercase">Join Our Team</h4>
           <h1 className="font-display font-bold text-5xl md:text-7xl text-white uppercase drop-shadow-2xl">
             Career
           </h1>
@@ -24,11 +24,11 @@ export default function CareerPage() {
           </p>
           
           <div className="p-12 border border-white/5 bg-[#0a0a0a]">
-            <h3 className="text-2xl font-bold mb-4 text-[#49769F]">Current Openings</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#00B4D8]">Current Openings</h3>
             <p className="text-gray-500 mb-8">
               There are currently no open positions. Please check back later or send your resume to our HR department.
             </p>
-            <a href="mailto:info@taplindia.net" className="inline-block border border-white/20 hover:border-[#49769F] text-white px-8 py-4 font-bold tracking-widest text-sm transition-colors">
+            <a href="mailto:info@taplindia.net" className="inline-block border border-white/20 hover:border-[#00B4D8] text-white px-8 py-4 font-bold tracking-widest text-sm transition-colors">
               SUBMIT RESUME
             </a>
           </div>

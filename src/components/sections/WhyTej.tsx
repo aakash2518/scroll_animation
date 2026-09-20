@@ -56,8 +56,8 @@ export default function WhyTej() {
             <div className="space-y-12 md:space-y-24 pt-12 lg:pt-32">
               {points.map((pt, i) => (
                 <div key={i} className="why-item relative pl-8 md:pl-16 border-l border-white/10 group">
-                  <div className="absolute top-0 left-0 w-[2px] h-0 bg-[#0A4174] group-hover:h-full transition-all duration-700 ease-out"></div>
-                  <span className="absolute -left-8 md:-left-12 top-0 text-[#0A4174] font-mono text-xl md:text-2xl opacity-50 group-hover:opacity-100 transition-opacity">0{i+1}</span>
+                  <div className="absolute top-0 left-0 w-[2px] h-0 bg-[#0077B6] group-hover:h-full transition-all duration-700 ease-out"></div>
+                  <span className="absolute -left-8 md:-left-12 top-0 text-[#0077B6] font-mono text-xl md:text-2xl opacity-50 group-hover:opacity-100 transition-opacity">0{i+1}</span>
                   <h3 className="font-display font-bold text-2xl md:text-4xl mb-4 group-hover:text-white text-gray-300 transition-colors">{pt.title}</h3>
                   <p className="text-gray-500 text-lg leading-relaxed">{pt.desc}</p>
                 </div>

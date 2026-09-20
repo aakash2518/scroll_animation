@@ -71,7 +71,7 @@ export default function StatsCounter() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-24 bg-[#0A4174] overflow-hidden">
+    <section ref={sectionRef} className="relative py-20 md:py-24 bg-[#0077B6] overflow-hidden">
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
       {/* Diagonal accent */}

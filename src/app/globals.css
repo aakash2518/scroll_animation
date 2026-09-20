@@ -5,7 +5,7 @@
   --color-graphite-800: #121212;
   --color-graphite-700: #1a1a1a;
   --color-graphite-600: #2a2a2a;
-  --color-industrial-accent: #0A4174;
+  --color-industrial-accent: #0077B6;
   --color-metallic-light: #e0e0e0;
   --color-metallic-dark: #888888;
   
@@ -40,12 +40,12 @@
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #0A4174;
+    background: #0077B6;
   }
 
   /* Selection */
   ::selection {
-    background: #0A4174;
+    background: #0077B6;
     color: white;
   }
 

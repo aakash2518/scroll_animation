@@ -24,7 +24,7 @@ export default function WireframeModel() {
       {/* Outer framing */}
       <mesh>
         <icosahedronGeometry args={[3, 1]} />
-        <meshStandardMaterial color="#49769F" wireframe transparent opacity={0.15} />
+        <meshStandardMaterial color="#00B4D8" wireframe transparent opacity={0.15} />
       </mesh>
     </group>
   );

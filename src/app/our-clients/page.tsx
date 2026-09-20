@@ -15,7 +15,7 @@ export default function OurClientsPage() {
             <Suspense fallback={null}>
               <ambientLight intensity={0.5} />
               <directionalLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
-              <directionalLight position={[-10, -10, 10]} intensity={2} color="#0A4174" />
+              <directionalLight position={[-10, -10, 10]} intensity={2} color="#0077B6" />
               <Environment preset="city" />
               <ClientSpheres />
             </Suspense>
@@ -24,7 +24,7 @@ export default function OurClientsPage() {
         </div>
         
         <div className="relative z-10 text-center container mx-auto px-6">
-          <h4 className="text-[#0A4174] font-bold tracking-widest text-sm mb-4 uppercase">Partners</h4>
+          <h4 className="text-[#0077B6] font-bold tracking-widest text-sm mb-4 uppercase">Partners</h4>
           <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase drop-shadow-2xl">
             Our Clients
           </h1>

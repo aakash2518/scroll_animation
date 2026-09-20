@@ -20,7 +20,7 @@ export default function AboutUsPage() {
         </div>
         
         <div className="relative z-10 text-center container mx-auto px-6">
-          <h4 className="text-[#49769F] font-bold tracking-widest text-sm mb-4 uppercase">Company</h4>
+          <h4 className="text-[#00B4D8] font-bold tracking-widest text-sm mb-4 uppercase">Company</h4>
           <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase drop-shadow-2xl">
             About Us
           </h1>

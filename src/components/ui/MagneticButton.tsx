@@ -32,7 +32,7 @@ export default function MagneticButton({
 
   const baseClasses = "relative overflow-hidden group flex items-center justify-center transition-all duration-300";
   const variants = {
-    primary: "bg-[#0A4174] text-white",
+    primary: "bg-[#0077B6] text-white",
     outline: "border border-white/20 hover:border-white/50 text-white bg-transparent backdrop-blur-md"
   };
 

@@ -121,8 +121,8 @@ export default function CompanyStory() {
           <div className="w-full lg:w-1/2">
             <div className="inline-block mb-4 story-element">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-[2px] bg-[#0A4174]"></div>
-                <h4 className="text-[#0A4174] font-bold tracking-widest text-xs uppercase">About Our Company</h4>
+                <div className="w-10 h-[2px] bg-[#0077B6]"></div>
+                <h4 className="text-[#0077B6] font-bold tracking-widest text-xs uppercase">About Our Company</h4>
               </div>
             </div>
             
@@ -133,7 +133,7 @@ export default function CompanyStory() {
             />
             
             <div>
-              <div className="text-lg lg:text-xl text-gray-300 font-light leading-relaxed mb-4 lg:mb-6 border-l-2 border-[#0A4174]/30 pl-4 lg:pl-6">
+              <div className="text-lg lg:text-xl text-gray-300 font-light leading-relaxed mb-4 lg:mb-6 border-l-2 border-[#0077B6]/30 pl-4 lg:pl-6">
                 {text1.split(' ').map((word, i) => (
                   <span key={i} className="inline-block mr-1 opacity-20 translate-y-2 word-anim">{word}</span>
                 ))}
@@ -156,8 +156,8 @@ export default function CompanyStory() {
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0a]/50 via-transparent to-transparent pointer-events-none"></div>
             {/* Corner accent */}
-            <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#0A4174] pointer-events-none"></div>
-            <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#0A4174] pointer-events-none"></div>
+            <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#0077B6] pointer-events-none"></div>
+            <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#0077B6] pointer-events-none"></div>
           </div>
           
         </div>

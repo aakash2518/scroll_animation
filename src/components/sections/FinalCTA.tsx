@@ -14,7 +14,7 @@ export default function FinalCTA() {
           <h2 className="font-display font-bold text-6xl md:text-8xl lg:text-[7rem] leading-[0.9] tracking-tight mb-8">
             <span className="block text-gray-500">LET'S BUILD</span>
             <span className="block text-white">WHAT MOVES</span>
-            <span className="block text-[#0A4174]">INDUSTRY.</span>
+            <span className="block text-[#0077B6]">INDUSTRY.</span>
           </h2>
           
           <p className="text-xl md:text-2xl text-gray-400 font-light mb-12 max-w-2xl mx-auto">

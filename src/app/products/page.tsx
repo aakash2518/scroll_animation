@@ -13,7 +13,7 @@ export default function ProductsPage() {
           <Canvas camera={{ position: [0, 5, 10], fov: 50 }} dpr={[1, 1.5]}>
             <Suspense fallback={null}>
               <ambientLight intensity={1} />
-              <directionalLight position={[10, 10, 5]} intensity={2} color="#49769F" />
+              <directionalLight position={[10, 10, 5]} intensity={2} color="#00B4D8" />
               <Environment preset="city" />
               <FlowField />
             </Suspense>
@@ -22,7 +22,7 @@ export default function ProductsPage() {
         </div>
         
         <div className="relative z-10 text-center container mx-auto px-6">
-          <h4 className="text-[#0A4174] font-bold tracking-widest text-sm mb-4 uppercase">Our Systems</h4>
+          <h4 className="text-[#0077B6] font-bold tracking-widest text-sm mb-4 uppercase">Our Systems</h4>
           <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase drop-shadow-2xl">
             Featured Products
           </h1>
@@ -43,9 +43,9 @@ export default function ProductsPage() {
               "Aging Conveyor of LED Bulb", "LED Aging Racks", "Mesh Conveyors",
               "Truck Loader Conveyors", "Material Handling Trolleys"
             ].map((prod, i) => (
-              <div key={i} className="p-6 border border-white/10 bg-white/5 rounded-sm hover:border-[#49769F] transition-colors group cursor-pointer">
-                <span className="text-[#49769F] font-mono text-xs mb-2 block">{String(i+1).padStart(2, '0')}</span>
-                <h3 className="text-white font-bold text-xl group-hover:text-[#49769F] transition-colors">{prod}</h3>
+              <div key={i} className="p-6 border border-white/10 bg-white/5 rounded-sm hover:border-[#00B4D8] transition-colors group cursor-pointer">
+                <span className="text-[#00B4D8] font-mono text-xs mb-2 block">{String(i+1).padStart(2, '0')}</span>
+                <h3 className="text-white font-bold text-xl group-hover:text-[#00B4D8] transition-colors">{prod}</h3>
               </div>
             ))}
           </div>

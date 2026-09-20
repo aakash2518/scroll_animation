@@ -59,7 +59,7 @@ export default function IntroLoader() {
       <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none mix-blend-overlay"></div>
       
       {/* Subtle Gradient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0A4174]/10 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0077B6]/10 blur-[100px] rounded-full pointer-events-none"></div>
 
       <div className="relative z-10 flex flex-col items-center">
         {/* Logo */}
@@ -76,11 +76,11 @@ export default function IntroLoader() {
         {/* Loading Bar Container */}
         <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden">
           {/* Animated Bar */}
-          <div className="intro-bar w-full h-full bg-[#0A4174] rounded-full"></div>
+          <div className="intro-bar w-full h-full bg-[#0077B6] rounded-full"></div>
         </div>
 
         {/* Loading Text */}
-        <div className="intro-logo mt-4 text-[#0A4174] font-mono text-[10px] tracking-[0.3em] uppercase">
+        <div className="intro-logo mt-4 text-[#0077B6] font-mono text-[10px] tracking-[0.3em] uppercase">
           Initializing System...
         </div>
       </div>

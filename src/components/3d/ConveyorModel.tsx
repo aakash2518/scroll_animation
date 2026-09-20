@@ -38,7 +38,7 @@ export default function ConveyorModel(props: any) {
       {/* Details/Accents */}
       <mesh position={[0, -0.5, 1.01]}>
         <boxGeometry args={[10, 0.05, 0.05]} />
-        <meshStandardMaterial color="#0A4174" emissive="#0A4174" emissiveIntensity={0.5} />
+        <meshStandardMaterial color="#0077B6" emissive="#0077B6" emissiveIntensity={0.5} />
       </mesh>
       
       {/* Frame Legs */}

@@ -64,7 +64,7 @@ export default function Products() {
       </div>
 
       <div className="absolute top-24 md:top-32 left-0 right-0 w-full flex flex-col items-center justify-center z-20 pointer-events-none text-center">
-        <h4 className="text-[#0A4174] font-bold tracking-widest text-xs md:text-sm mb-2 uppercase drop-shadow-md">PRODUCTS</h4>
+        <h4 className="text-[#0077B6] font-bold tracking-widest text-xs md:text-sm mb-2 uppercase drop-shadow-md">PRODUCTS</h4>
         <h2 className="font-display font-bold text-2xl md:text-4xl leading-tight text-white uppercase drop-shadow-lg">
           FEATURED PRODUCTS
         </h2>
@@ -120,7 +120,7 @@ export default function Products() {
                         : 'opacity-0 translate-y-8 z-0 pointer-events-none'
                   }`}
                 >
-                  <span className="text-[#0A4174] font-mono text-xs md:text-sm tracking-widest mb-3 uppercase block">
+                  <span className="text-[#0077B6] font-mono text-xs md:text-sm tracking-widest mb-3 uppercase block">
                     CATEGORY / {prod.title}
                   </span>
                   
@@ -128,7 +128,7 @@ export default function Products() {
                     {prod.name}
                   </h3>
                   
-                  <div className="w-12 h-[2px] bg-[#0A4174]/50 mb-4 md:mb-6"></div>
+                  <div className="w-12 h-[2px] bg-[#0077B6]/50 mb-4 md:mb-6"></div>
                   
                   <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6 md:mb-12 line-clamp-3 md:line-clamp-none">
                     {prod.desc}
@@ -137,10 +137,10 @@ export default function Products() {
                   <div className="mt-auto md:mt-0 flex items-center justify-between">
                     <button 
                       onClick={() => { setActiveProduct(prod); setIsModalOpen(true); }}
-                      className="group flex items-center gap-3 text-white hover:text-[#0A4174] transition-colors"
+                      className="group flex items-center gap-3 text-white hover:text-[#0077B6] transition-colors"
                     >
                       <span className="text-xs font-bold tracking-widest uppercase">VIEW DETAILS</span>
-                      <div className="w-10 h-10 rounded-full border border-white/20 group-hover:border-[#0A4174] flex items-center justify-center transition-colors">
+                      <div className="w-10 h-10 rounded-full border border-white/20 group-hover:border-[#0077B6] flex items-center justify-center transition-colors">
                         <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </div>
                     </button>
@@ -157,7 +157,7 @@ export default function Products() {
           {products.map((_, i) => (
             <div 
               key={`dot-${i}`} 
-              className={`w-1 md:w-1.5 transition-all duration-300 rounded-full ${activeIndex === i ? 'h-6 md:h-8 bg-[#0A4174]' : 'h-1.5 md:h-2 bg-white/20'}`}
+              className={`w-1 md:w-1.5 transition-all duration-300 rounded-full ${activeIndex === i ? 'h-6 md:h-8 bg-[#0077B6]' : 'h-1.5 md:h-2 bg-white/20'}`}
             ></div>
           ))}
         </div>
@@ -165,8 +165,8 @@ export default function Products() {
 
       {/* Tech HUD elements */}
       <div className="absolute bottom-6 right-6 z-20 text-right pointer-events-none hidden md:block">
-        <span className="text-[#0A4174] font-bold tracking-widest text-[10px] sm:text-xs uppercase flex items-center gap-2 drop-shadow-md">
-          <span className={`w-2 h-2 rounded-full bg-[#0A4174] animate-ping`}></span>
+        <span className="text-[#0077B6] font-bold tracking-widest text-[10px] sm:text-xs uppercase flex items-center gap-2 drop-shadow-md">
+          <span className={`w-2 h-2 rounded-full bg-[#0077B6] animate-ping`}></span>
           SYSTEM ACTIVE
         </span>
       </div>
@@ -189,14 +189,14 @@ export default function Products() {
             <div className="w-full md:w-1/2 h-48 md:h-full border-b md:border-b-0 md:border-r border-white/5 bg-[#0a0a0a] relative flex items-center justify-center">
               <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
               <img src={activeProduct.image} alt={activeProduct.name} className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" />
-              <div className="w-32 h-32 md:w-64 md:h-64 border border-[#0A4174]/30 relative flex items-center justify-center z-10 bg-black/50 backdrop-blur-sm rounded-full md:rounded-none">
+              <div className="w-32 h-32 md:w-64 md:h-64 border border-[#0077B6]/30 relative flex items-center justify-center z-10 bg-black/50 backdrop-blur-sm rounded-full md:rounded-none">
                 <div className="absolute inset-0 border border-white/20 rotate-45 hidden md:block"></div>
                 <span className="font-display text-4xl md:text-5xl font-bold text-white/40">{activeProduct.id}</span>
               </div>
             </div>
             
             <div className="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto">
-              <span className="text-[#0A4174] font-mono text-xs md:text-sm tracking-widest mb-2 md:mb-4 block">PRODUCT / {activeProduct.id}</span>
+              <span className="text-[#0077B6] font-mono text-xs md:text-sm tracking-widest mb-2 md:mb-4 block">PRODUCT / {activeProduct.id}</span>
               <h3 className="font-display font-bold text-2xl md:text-4xl lg:text-5xl mb-4 md:mb-6">{activeProduct.name}</h3>
               <p className="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">{activeProduct.desc}</p>
               

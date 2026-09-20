@@ -47,7 +47,7 @@ export default function Navbar() {
               <Link 
                 key={link.name} 
                 href={link.href} 
-                className={`text-xs font-bold tracking-widest transition-colors ${isActive ? 'text-[#0A4174]' : 'text-white hover:text-[#0A4174]'}`}
+                className={`text-xs font-bold tracking-widest transition-colors ${isActive ? 'text-[#0077B6]' : 'text-white hover:text-[#0077B6]'}`}
               >
                 {link.name}
               </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <Link href="/contact-us" className="px-6 py-3 bg-[#0A4174] hover:bg-[#3d44b0] transition-all text-xs font-bold tracking-widest rounded-sm text-white flex items-center gap-2 group shadow-lg shadow-[#0A4174]/20">
+          <Link href="/contact-us" className="px-6 py-3 bg-[#0077B6] hover:bg-[#005f8a] transition-all text-xs font-bold tracking-widest rounded-sm text-white flex items-center gap-2 group shadow-lg shadow-[#0077B6]/20">
             GET A QUOTE
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
