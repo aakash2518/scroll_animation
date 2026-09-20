@@ -63,10 +63,46 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button className="md:hidden text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden absolute top-full left-0 w-full bg-[#050505]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl"
+        >
+          <nav className="flex flex-col px-6 py-6 gap-1">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-sm font-bold tracking-widest py-3 px-4 rounded-lg transition-all ${isActive ? 'text-[#0077B6] bg-[#0077B6]/10' : 'text-white hover:text-[#0077B6] hover:bg-white/5'}`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+            <div className="mt-4 pt-4 border-t border-white/10">
+              <Link
+                href="/contact-us"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-center px-6 py-4 bg-[#0077B6] hover:bg-[#005f8a] transition-all text-xs font-bold tracking-widest rounded-lg text-white shadow-lg shadow-[#0077B6]/20"
+              >
+                GET A QUOTE →
+              </Link>
+            </div>
+          </nav>
+        </motion.div>
+      )}
     </header>
   );
 }
