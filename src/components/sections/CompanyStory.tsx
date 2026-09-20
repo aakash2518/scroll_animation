@@ -181,3 +181,5 @@ export default function CompanyStory() {
     </section>
   );
 }
+
+useGLTF.preload('/videos/tata_signa_cargo_truck__low_poly_game_ready_pbr.glb');

@@ -33,30 +33,35 @@ export default function IndustrialHero() {
 
     // Scroll animation
     const ctx = gsap.context(() => {
-      // Pinning and zooming
-      gsap.to(videoRef.current, {
-        scale: 1.08,
-        ease: 'none',
-        force3D: true,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        }
-      });
+      let mm = gsap.matchMedia();
 
-      // Text moving up faster than scroll (parallax)
-      gsap.to(textRef.current, {
-        y: -150,
-        ease: 'none',
-        force3D: true,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        }
+      // Desktop Only Animations
+      mm.add("(min-width: 768px)", () => {
+        // Pinning and zooming
+        gsap.to(videoRef.current, {
+          scale: 1.08,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          }
+        });
+
+        // Text moving up faster than scroll (parallax)
+        gsap.to(textRef.current, {
+          y: -150,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          }
+        });
       });
 
       // Darkening overlay
