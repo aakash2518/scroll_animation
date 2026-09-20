@@ -116,9 +116,9 @@ export default function Industries() {
 
       <div className="absolute top-28 md:top-32 left-0 right-0 w-full flex flex-col items-center justify-center z-20 pointer-events-none text-center">
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-8 h-[2px] bg-[#4a50c8]"></div>
-          <h4 className="text-[#4a50c8] font-bold tracking-widest text-xs uppercase drop-shadow-md">APPLICATIONS</h4>
-          <div className="w-8 h-[2px] bg-[#4a50c8]"></div>
+          <div className="w-8 h-[2px] bg-[#0A4174]"></div>
+          <h4 className="text-[#0A4174] font-bold tracking-widest text-xs uppercase drop-shadow-md">APPLICATIONS</h4>
+          <div className="w-8 h-[2px] bg-[#0A4174]"></div>
         </div>
         <h2 className="font-display font-black text-3xl md:text-5xl leading-tight text-white uppercase drop-shadow-lg">
           OUR APPLICATIONS
@@ -144,11 +144,11 @@ export default function Industries() {
                       : 'opacity-50 translate-y-2 scale-90 origin-left'
                 }`}
               >
-                <span className={`font-mono text-sm md:text-lg tracking-widest transition-colors duration-500 drop-shadow-md ${isActive ? 'text-[#4a50c8]' : 'text-gray-600'}`}>
+                <span className={`font-mono text-sm md:text-lg tracking-widest transition-colors duration-500 drop-shadow-md ${isActive ? 'text-[#0A4174]' : 'text-gray-600'}`}>
                   {ind.id}
                 </span>
                 <div className="flex items-center gap-4">
-                  {isActive && <div className="w-6 h-[2px] bg-[#4a50c8] hidden md:block"></div>}
+                  {isActive && <div className="w-6 h-[2px] bg-[#0A4174] hidden md:block"></div>}
                   <h3 className={`font-display font-black text-3xl sm:text-5xl lg:text-7xl uppercase transition-all duration-500 ${isActive ? 'text-white drop-shadow-[0_0_30px_rgba(255,69,0,0.3)]' : 'text-gray-600'}`}>
                     {ind.title}
                   </h3>
@@ -163,14 +163,14 @@ export default function Industries() {
       {/* Bottom Progress Bar */}
       <div className="absolute bottom-0 left-0 right-0 z-20 h-1 bg-white/5">
         <div 
-          className="h-full bg-[#4a50c8] transition-all duration-100 ease-linear shadow-[0_0_10px_rgba(255,69,0,0.5)]"
+          className="h-full bg-[#0A4174] transition-all duration-100 ease-linear shadow-[0_0_10px_rgba(255,69,0,0.5)]"
           style={{ width: `${scrollProgress * 100}%` }}
         ></div>
       </div>
 
       {/* Active industry indicator */}
       <div className="absolute bottom-8 right-8 z-20 text-right pointer-events-none hidden md:block">
-        <span className="text-[#4a50c8] font-mono text-sm tracking-widest">
+        <span className="text-[#0A4174] font-mono text-sm tracking-widest">
           {String(activeIndex + 1).padStart(2, '0')} / {String(industries.length).padStart(2, '0')}
         </span>
       </div>

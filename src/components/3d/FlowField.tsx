@@ -42,7 +42,7 @@ export default function FlowField() {
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
       <boxGeometry args={[0.5, 0.1, 1]} />
-      <meshStandardMaterial color="#4a50c8" metalness={0.8} roughness={0.2} />
+      <meshStandardMaterial color="#0A4174" metalness={0.8} roughness={0.2} />
     </instancedMesh>
   );
 }

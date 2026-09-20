@@ -21,7 +21,7 @@ export default function IndustrialScene({
           <color attach="background" args={['#0a0a0a']} />
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
-          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#4a50c8" />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#0A4174" />
           
           <group position={[0, -1, 0]}>
             <ConveyorModel rotation={[0, -Math.PI / 6, 0]} />

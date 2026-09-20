@@ -71,19 +71,19 @@ export default function Testimonials() {
     <section ref={containerRef} className="relative py-32 md:py-40 bg-[#050505] border-t border-white/5 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none mix-blend-overlay"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#4a50c8]/5 blur-[150px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0A4174]/5 blur-[150px] rounded-full pointer-events-none"></div>
       
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <div className="w-8 h-[2px] bg-[#4a50c8]"></div>
-            <h4 className="text-[#4a50c8] font-bold tracking-widest text-xs uppercase">Testimonials</h4>
-            <div className="w-8 h-[2px] bg-[#4a50c8]"></div>
+            <div className="w-8 h-[2px] bg-[#0A4174]"></div>
+            <h4 className="text-[#0A4174] font-bold tracking-widest text-xs uppercase">Testimonials</h4>
+            <div className="w-8 h-[2px] bg-[#0A4174]"></div>
           </div>
           <h2 className="font-display font-black text-4xl md:text-5xl text-white uppercase">
             TRUSTED BY<br/>
-            <span className="text-[#4a50c8]">OUR CLIENTS</span>
+            <span className="text-[#0A4174]">OUR CLIENTS</span>
           </h2>
         </div>
         
@@ -93,16 +93,16 @@ export default function Testimonials() {
           {/* Left Arrow */}
           <button 
             onClick={handlePrev} 
-            className="absolute left-0 z-20 w-12 h-12 border border-white/10 hover:border-[#4a50c8] flex items-center justify-center transition-colors hidden md:flex group"
+            className="absolute left-0 z-20 w-12 h-12 border border-white/10 hover:border-[#0A4174] flex items-center justify-center transition-colors hidden md:flex group"
           >
-            <ChevronLeft className="w-5 h-5 text-white/50 group-hover:text-[#4a50c8] transition-colors" />
+            <ChevronLeft className="w-5 h-5 text-white/50 group-hover:text-[#0A4174] transition-colors" />
           </button>
 
           {/* Content */}
           <div className="w-full max-w-3xl text-center testimonial-content px-4 md:px-16">
             {/* Large Quote Mark */}
             <div className="flex justify-center mb-8">
-              <span className="text-[#4a50c8] text-8xl md:text-9xl font-serif leading-none opacity-60 select-none">"</span>
+              <span className="text-[#0A4174] text-8xl md:text-9xl font-serif leading-none opacity-60 select-none">"</span>
             </div>
             
             <p className="text-gray-200 text-lg md:text-2xl leading-relaxed font-light mb-12">
@@ -111,14 +111,14 @@ export default function Testimonials() {
             
             {/* Author */}
             <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 bg-[#4a50c8]/20 rounded-full flex items-center justify-center border border-[#4a50c8]/30">
-                <span className="text-[#4a50c8] font-bold text-sm">
+              <div className="w-12 h-12 bg-[#0A4174]/20 rounded-full flex items-center justify-center border border-[#0A4174]/30">
+                <span className="text-[#0A4174] font-bold text-sm">
                   {testimonials[activeIndex].name.charAt(0)}
                 </span>
               </div>
               <div className="text-left">
                 <h4 className="text-white font-bold text-sm tracking-widest">{testimonials[activeIndex].name}</h4>
-                <span className="text-[#4a50c8] text-xs tracking-widest">{testimonials[activeIndex].role}</span>
+                <span className="text-[#0A4174] text-xs tracking-widest">{testimonials[activeIndex].role}</span>
               </div>
             </div>
           </div>
@@ -126,15 +126,15 @@ export default function Testimonials() {
           {/* Right Arrow */}
           <button 
             onClick={handleNext} 
-            className="absolute right-0 z-20 w-12 h-12 border border-white/10 hover:border-[#4a50c8] flex items-center justify-center transition-colors hidden md:flex group"
+            className="absolute right-0 z-20 w-12 h-12 border border-white/10 hover:border-[#0A4174] flex items-center justify-center transition-colors hidden md:flex group"
           >
-            <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-[#4a50c8] transition-colors" />
+            <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-[#0A4174] transition-colors" />
           </button>
         </div>
 
         {/* Dots + Mobile Controls */}
         <div className="flex items-center justify-center gap-4 mt-12">
-          <button onClick={handlePrev} className="text-white/40 hover:text-[#4a50c8] md:hidden transition-colors">
+          <button onClick={handlePrev} className="text-white/40 hover:text-[#0A4174] md:hidden transition-colors">
             <ChevronLeft className="w-6 h-6" />
           </button>
           
@@ -145,7 +145,7 @@ export default function Testimonials() {
                 onClick={() => setActiveIndex(idx)}
                 className={`transition-all duration-300 rounded-full ${
                   activeIndex === idx 
-                    ? 'w-8 h-2 bg-[#4a50c8]' 
+                    ? 'w-8 h-2 bg-[#0A4174]' 
                     : 'w-2 h-2 bg-white/20 hover:bg-white/40'
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
@@ -153,7 +153,7 @@ export default function Testimonials() {
             ))}
           </div>
 
-          <button onClick={handleNext} className="text-white/40 hover:text-[#4a50c8] md:hidden transition-colors">
+          <button onClick={handleNext} className="text-white/40 hover:text-[#0A4174] md:hidden transition-colors">
             <ChevronRight className="w-6 h-6" />
           </button>
         </div>

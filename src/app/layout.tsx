@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${outfit.variable} antialiased bg-[var(--background)] text-white selection:bg-[#4a50c8] selection:text-white`}>
+      <body className={`${inter.variable} ${outfit.variable} antialiased bg-[var(--background)] text-white selection:bg-[#0A4174] selection:text-white`}>
         <IntroLoader />
         <SmoothScroll>
           <Navbar />

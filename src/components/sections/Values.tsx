@@ -22,7 +22,7 @@ export default function Values() {
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <h2 className="text-[#4a50c8] text-sm tracking-[0.3em] font-bold mb-20">OUR CORE VALUES</h2>
+        <h2 className="text-[#0A4174] text-sm tracking-[0.3em] font-bold mb-20">OUR CORE VALUES</h2>
         
         <div className="flex flex-col items-center gap-6 md:gap-10">
           {values.map((val, i) => {

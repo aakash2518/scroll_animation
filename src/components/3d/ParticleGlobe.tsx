@@ -48,7 +48,7 @@ export default function ParticleGlobe() {
       </bufferGeometry>
       <pointsMaterial
         size={0.03}
-        color="#ff4500"
+        color="#49769F"
         sizeAttenuation={true}
         transparent={true}
         opacity={0.8}

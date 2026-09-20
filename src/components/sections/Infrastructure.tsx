@@ -37,7 +37,7 @@ export default function Infrastructure() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="parallax-bg absolute -inset-[20%] bg-[#0a0a0a] z-0">
           <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4a50c8] rounded-full mix-blend-screen filter blur-[150px] opacity-20"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0A4174] rounded-full mix-blend-screen filter blur-[150px] opacity-20"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white rounded-full mix-blend-screen filter blur-[150px] opacity-5"></div>
           
           {/* Abstract structural lines */}
@@ -62,9 +62,9 @@ export default function Infrastructure() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {facilities.map((fac, i) => (
-              <div key={i} className="glass-panel p-6 md:p-8 border border-white/10 rounded-sm hover:border-[#4a50c8]/50 transition-colors duration-300 group cursor-default relative overflow-hidden backdrop-blur-xl">
-                <div className="absolute inset-0 bg-[#4a50c8]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-                <span className="text-[#4a50c8] font-mono text-xs tracking-widest mb-4 block relative z-10">{fac.id}</span>
+              <div key={i} className="glass-panel p-6 md:p-8 border border-white/10 rounded-sm hover:border-[#0A4174]/50 transition-colors duration-300 group cursor-default relative overflow-hidden backdrop-blur-xl">
+                <div className="absolute inset-0 bg-[#0A4174]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+                <span className="text-[#0A4174] font-mono text-xs tracking-widest mb-4 block relative z-10">{fac.id}</span>
                 <h4 className="font-bold text-white text-sm md:text-base tracking-wider relative z-10">{fac.name}</h4>
               </div>
             ))}

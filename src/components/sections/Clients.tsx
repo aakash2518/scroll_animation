@@ -49,7 +49,7 @@ export default function Clients() {
       </div>
 
       <div className="container mx-auto px-6 mt-16 text-center">
-        <Link href="/our-clients" className="inline-block px-10 py-4 bg-[#ff4500] text-white font-bold tracking-widest text-xs hover:bg-transparent hover:text-[#ff4500] border border-[#ff4500] transition-colors rounded-sm">
+        <Link href="/our-clients" className="inline-block px-10 py-4 bg-[#49769F] text-white font-bold tracking-widest text-xs hover:bg-transparent hover:text-[#49769F] border border-[#49769F] transition-colors rounded-sm">
           VIEW ALL CLIENTS
         </Link>
       </div>

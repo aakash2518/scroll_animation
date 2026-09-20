@@ -12,8 +12,8 @@ export default function ContactUsPage() {
           <Canvas camera={{ position: [0, 0, 5], fov: 50 }} dpr={[1, 1.5]}>
             <Suspense fallback={null}>
               <ambientLight intensity={1.5} />
-              <directionalLight position={[0, 10, 5]} intensity={2} color="#ff4500" />
-              <directionalLight position={[-5, 5, 5]} intensity={1} color="#4a50c8" />
+              <directionalLight position={[0, 10, 5]} intensity={2} color="#49769F" />
+              <directionalLight position={[-5, 5, 5]} intensity={1} color="#0A4174" />
               <LiquidMesh />
             </Suspense>
           </Canvas>
@@ -21,7 +21,7 @@ export default function ContactUsPage() {
         </div>
         
         <div className="relative z-10 text-center container mx-auto px-6">
-          <h4 className="text-[#ff4500] font-bold tracking-widest text-sm mb-4 uppercase">Get In Touch</h4>
+          <h4 className="text-[#49769F] font-bold tracking-widest text-sm mb-4 uppercase">Get In Touch</h4>
           <h1 className="font-display font-bold text-5xl md:text-7xl text-white uppercase drop-shadow-2xl">
             Contact Us
           </h1>
@@ -39,11 +39,11 @@ export default function ContactUsPage() {
               </p>
               
               <form className="space-y-6">
-                <input type="text" placeholder="Your Name" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#ff4500] transition-colors" />
-                <input type="email" placeholder="Email Address" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#ff4500] transition-colors" />
-                <input type="tel" placeholder="Phone Number" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#ff4500] transition-colors" />
-                <textarea placeholder="Message" rows={4} className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#ff4500] transition-colors"></textarea>
-                <button type="button" className="bg-[#ff4500] text-white px-10 py-4 font-bold tracking-widest text-sm hover:bg-transparent border border-[#ff4500] transition-colors w-full">
+                <input type="text" placeholder="Your Name" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#49769F] transition-colors" />
+                <input type="email" placeholder="Email Address" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#49769F] transition-colors" />
+                <input type="tel" placeholder="Phone Number" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#49769F] transition-colors" />
+                <textarea placeholder="Message" rows={4} className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#49769F] transition-colors"></textarea>
+                <button type="button" className="bg-[#49769F] text-white px-10 py-4 font-bold tracking-widest text-sm hover:bg-transparent border border-[#49769F] transition-colors w-full">
                   SUBMIT NOW
                 </button>
               </form>
@@ -59,13 +59,13 @@ export default function ContactUsPage() {
                   </li>
                   <li>
                     <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Phone</h4>
-                    <a href="tel:+919711415164" className="text-white text-lg hover:text-[#ff4500] block">+91 9711 415 164</a>
-                    <a href="tel:+918053650222" className="text-white text-lg hover:text-[#ff4500] block">+91 8053 650 222</a>
+                    <a href="tel:+919711415164" className="text-white text-lg hover:text-[#49769F] block">+91 9711 415 164</a>
+                    <a href="tel:+918053650222" className="text-white text-lg hover:text-[#49769F] block">+91 8053 650 222</a>
                   </li>
                   <li>
                     <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Email</h4>
-                    <a href="mailto:info@taplindia.net" className="text-white text-lg hover:text-[#ff4500] block">info@taplindia.net</a>
-                    <a href="mailto:rahul@taplindia.net" className="text-white text-lg hover:text-[#ff4500] block">rahul@taplindia.net</a>
+                    <a href="mailto:info@taplindia.net" className="text-white text-lg hover:text-[#49769F] block">info@taplindia.net</a>
+                    <a href="mailto:rahul@taplindia.net" className="text-white text-lg hover:text-[#49769F] block">rahul@taplindia.net</a>
                   </li>
                 </ul>
               </div>

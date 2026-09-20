@@ -34,7 +34,7 @@ export default function SystemInMotion() {
               IN MOTION
               <div className="absolute -left-6 top-0 bottom-0 w-[2px] bg-white/10"></div>
               <motion.div 
-                className="absolute -left-6 top-0 w-[2px] bg-[#4a50c8]"
+                className="absolute -left-6 top-0 w-[2px] bg-[#0A4174]"
                 style={{ height: useTransform(scrollYProgress, [0, 1], ['0%', '100%']) }}
               ></motion.div>
             </h2>
@@ -62,7 +62,7 @@ export default function SystemInMotion() {
                       )
                     }}
                   >
-                    <span className="text-[#4a50c8] font-bold text-sm tracking-[0.2em] mb-2">STEP 0{index + 1}</span>
+                    <span className="text-[#0A4174] font-bold text-sm tracking-[0.2em] mb-2">STEP 0{index + 1}</span>
                     <h3 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white uppercase">{step.title}</h3>
                     <p className="text-gray-400 text-lg leading-relaxed">{step.desc}</p>
                   </motion.div>
@@ -73,7 +73,7 @@ export default function SystemInMotion() {
           
           <div className="hidden lg:block w-1/3 relative h-64 border border-white/5 rounded-sm p-6 glass-panel">
             <div className="absolute top-4 right-4 flex gap-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#4a50c8] animate-pulse"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-[#0A4174] animate-pulse"></div>
               <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
               <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
             </div>
@@ -91,7 +91,7 @@ export default function SystemInMotion() {
                   <span className="text-gray-400">Velocity</span>
                   <span className="text-white">2.4 m/s</span>
                 </div>
-                <div className="w-full h-1 bg-white/10"><div className="w-1/2 h-full bg-[#4a50c8]"></div></div>
+                <div className="w-full h-1 bg-white/10"><div className="w-1/2 h-full bg-[#0A4174]"></div></div>
               </div>
             </div>
           </div>

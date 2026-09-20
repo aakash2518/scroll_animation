@@ -20,7 +20,7 @@ export default function ContactForm() {
       <div className="flex flex-col lg:flex-row min-h-[600px]">
         
         {/* Left Side — Solid Orange */}
-        <div className="w-full lg:w-5/12 bg-[#4a50c8] relative overflow-hidden py-16 px-8 md:px-16 flex flex-col justify-center">
+        <div className="w-full lg:w-5/12 bg-[#0A4174] relative overflow-hidden py-16 px-8 md:px-16 flex flex-col justify-center">
           {/* Pattern overlay */}
           <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/10 to-transparent pointer-events-none"></div>
@@ -79,8 +79,8 @@ export default function ContactForm() {
           <div className="w-full max-w-2xl mx-auto">
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
-                <div className="w-20 h-20 bg-[#4a50c8]/20 rounded-full flex items-center justify-center mb-6">
-                  <CheckCircle2 className="w-10 h-10 text-[#4a50c8]" />
+                <div className="w-20 h-20 bg-[#0A4174]/20 rounded-full flex items-center justify-center mb-6">
+                  <CheckCircle2 className="w-10 h-10 text-[#0A4174]" />
                 </div>
                 <h3 className="font-display font-bold text-3xl mb-4 text-white uppercase">MESSAGE SENT</h3>
                 <p className="text-gray-400 mb-8 max-w-sm mx-auto">
@@ -88,7 +88,7 @@ export default function ContactForm() {
                 </p>
                 <button 
                   onClick={() => setIsSubmitted(false)} 
-                  className="bg-transparent border border-white/20 hover:border-[#4a50c8] hover:text-[#4a50c8] text-white px-8 py-3 text-xs tracking-widest font-bold uppercase transition-colors"
+                  className="bg-transparent border border-white/20 hover:border-[#0A4174] hover:text-[#0A4174] text-white px-8 py-3 text-xs tracking-widest font-bold uppercase transition-colors"
                 >
                   SEND ANOTHER MESSAGE
                 </button>
@@ -97,31 +97,31 @@ export default function ContactForm() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <input required type="text" className="w-full bg-[#111111] border border-white/10 focus:border-[#4a50c8] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm" placeholder="Full Name" />
+                    <input required type="text" className="w-full bg-[#111111] border border-white/10 focus:border-[#0A4174] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm" placeholder="Full Name" />
                   </div>
                   <div>
-                    <input required type="email" className="w-full bg-[#111111] border border-white/10 focus:border-[#4a50c8] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm" placeholder="Email Address" />
+                    <input required type="email" className="w-full bg-[#111111] border border-white/10 focus:border-[#0A4174] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm" placeholder="Email Address" />
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <input type="tel" className="w-full bg-[#111111] border border-white/10 focus:border-[#4a50c8] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm" placeholder="Phone Number" />
+                    <input type="tel" className="w-full bg-[#111111] border border-white/10 focus:border-[#0A4174] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm" placeholder="Phone Number" />
                   </div>
                   <div>
-                    <input required type="text" className="w-full bg-[#111111] border border-white/10 focus:border-[#4a50c8] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm" placeholder="Company Name" />
+                    <input required type="text" className="w-full bg-[#111111] border border-white/10 focus:border-[#0A4174] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm" placeholder="Company Name" />
                   </div>
                 </div>
                 
                 <div>
-                  <textarea required rows={5} className="w-full bg-[#111111] border border-white/10 focus:border-[#4a50c8] p-4 text-white placeholder-gray-500 outline-none transition-colors resize-none text-sm" placeholder="Tell us about your project"></textarea>
+                  <textarea required rows={5} className="w-full bg-[#111111] border border-white/10 focus:border-[#0A4174] p-4 text-white placeholder-gray-500 outline-none transition-colors resize-none text-sm" placeholder="Tell us about your project"></textarea>
                 </div>
                 
                 <div>
                   <button 
                     type="submit" 
                     disabled={isSubmitting} 
-                    className="group flex items-center justify-center gap-3 transition-all duration-300 bg-[#4a50c8] hover:bg-[#3d44b0] text-white px-8 py-4 font-bold tracking-widest text-xs w-full uppercase"
+                    className="group flex items-center justify-center gap-3 transition-all duration-300 bg-[#0A4174] hover:bg-[#3d44b0] text-white px-8 py-4 font-bold tracking-widest text-xs w-full uppercase"
                   >
                     <span>{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
                     {!isSubmitting && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
