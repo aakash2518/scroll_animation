@@ -114,8 +114,6 @@ export default function IndustrialHero() {
         className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#0a0a0a] opacity-50 z-10"
       ></div>
 
-      {/* Layer: Watermark Hider (Bottom Right) */}
-      <div className="absolute bottom-0 right-0 w-40 h-40 md:w-64 md:h-64 bg-gradient-to-tl from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent z-15 pointer-events-none"></div>
 
       {/* Layer 3: Noise Texture */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10 z-20 pointer-events-none mix-blend-overlay"></div>
