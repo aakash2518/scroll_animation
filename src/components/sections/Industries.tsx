@@ -68,38 +68,40 @@ export default function Industries() {
   useEffect(() => {
     if (!containerRef.current || !scrollWrapperRef.current) return;
     
-    const tl = gsap.timeline({
-      scrollTrigger: {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: `+=${industries.length * 100}%`,
+          pin: true,
+          scrub: true,
+        }
+      });
+      
+      ScrollTrigger.create({
         trigger: containerRef.current,
         start: 'top top',
         end: `+=${industries.length * 100}%`,
-        pin: true,
-        scrub: true,
-      }
-    });
-    
-    ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: 'top top',
-      end: `+=${industries.length * 100}%`,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        let index = Math.floor(progress * industries.length);
-        if (index >= industries.length) index = industries.length - 1;
-        setActiveIndex(index);
-        setScrollProgress(progress);
+        onUpdate: (self) => {
+          const progress = self.progress;
+          let index = Math.floor(progress * industries.length);
+          if (index >= industries.length) index = industries.length - 1;
+          setActiveIndex(index);
+          setScrollProgress(progress);
 
-        const frameCount = 50;
-        const frameIndex = Math.min(
-          frameCount - 1,
-          Math.max(0, Math.floor(progress * frameCount))
-        );
-        renderFrame(frameIndex);
-      }
-    });
+          const frameCount = 50;
+          const frameIndex = Math.min(
+            frameCount - 1,
+            Math.max(0, Math.floor(progress * frameCount))
+          );
+          renderFrame(frameIndex);
+        }
+      });
+    }, containerRef);
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ctx.revert();
     };
   }, []);
 

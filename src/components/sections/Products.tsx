@@ -28,30 +28,32 @@ export default function Products() {
   useEffect(() => {
     if (!containerRef.current || !scrollWrapperRef.current) return;
     
-    gsap.timeline({
-      scrollTrigger: {
+    const ctx = gsap.context(() => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: `+=${products.length * 100}%`,
+          pin: true,
+          scrub: true,
+        }
+      });
+      
+      ScrollTrigger.create({
         trigger: containerRef.current,
         start: 'top top',
         end: `+=${products.length * 100}%`,
-        pin: true,
-        scrub: true,
-      }
-    });
-    
-    ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: 'top top',
-      end: `+=${products.length * 100}%`,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        let index = Math.floor(progress * products.length);
-        if (index >= products.length) index = products.length - 1;
-        setActiveIndex(index);
-      }
-    });
+        onUpdate: (self) => {
+          const progress = self.progress;
+          let index = Math.floor(progress * products.length);
+          if (index >= products.length) index = products.length - 1;
+          setActiveIndex(index);
+        }
+      });
+    }, containerRef);
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ctx.revert();
     };
   }, []);
 
