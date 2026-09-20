@@ -11,7 +11,7 @@ export default function FinalCTA() {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-display font-bold text-6xl md:text-8xl lg:text-[7rem] leading-[0.9] tracking-tight mb-8">
+          <h2 className="font-display font-bold text-6xl md:text-8xl lg:text-[7rem] leading-[1.1] tracking-tight mb-8">
             <span className="block text-gray-500">LET'S BUILD</span>
             <span className="block text-white">WHAT MOVES</span>
             <span className="block text-[#0077B6]">INDUSTRY.</span>
@@ -34,3 +34,4 @@ export default function FinalCTA() {
     </section>
   );
 }
+

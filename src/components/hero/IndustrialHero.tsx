@@ -131,7 +131,7 @@ export default function IndustrialHero() {
           </div>
           
           <div className="overflow-hidden mb-8">
-            <h1 className="hero-reveal translate-y-full opacity-0 font-display font-bold text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.95] tracking-tight text-white will-change-transform">
+            <h1 className="hero-reveal translate-y-full opacity-0 font-display font-bold text-5xl md:text-7xl lg:text-[7.5rem] leading-[1.1] tracking-tight text-white will-change-transform">
               <span className="block">ENGINEERING</span>
               <span className="block text-gray-400">THAT MOVES</span>
               <span className="block">INDUSTRY.</span>

@@ -57,7 +57,7 @@ export default function Infrastructure() {
           <AnimatedText 
             as="h2"
             text="WHERE ENGINEERING TAKES SHAPE."
-            className="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight mb-16 text-white"
+            className="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight mb-16 text-white"
           />
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
@@ -74,3 +74,4 @@ export default function Infrastructure() {
     </section>
   );
 }
+
