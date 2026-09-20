@@ -1,76 +1,171 @@
 'use client';
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import LiquidMesh from '@/components/3d/LiquidMesh';
+import { useState } from 'react';
+import { CheckCircle2, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ContactUsPage() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }, 1500);
+  };
+
   return (
     <main className="w-full min-h-screen bg-[#050505] flex flex-col">
-      {/* 3D Hero Section */}
-      <section className="relative w-full h-[50vh] flex items-center justify-center border-b border-white/5 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Canvas camera={{ position: [0, 0, 5], fov: 50 }} dpr={[1, 1.5]}>
-            <Suspense fallback={null}>
-              <ambientLight intensity={1.5} />
-              <directionalLight position={[0, 10, 5]} intensity={2} color="#00B4D8" />
-              <directionalLight position={[-5, 5, 5]} intensity={1} color="#0077B6" />
-              <LiquidMesh />
-            </Suspense>
-          </Canvas>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-[#050505] pointer-events-none"></div>
-        </div>
-        
-        <div className="relative z-10 text-center container mx-auto px-6">
-          <h4 className="text-[#00B4D8] font-bold tracking-widest text-sm mb-4 uppercase">Get In Touch</h4>
-          <h1 className="font-display font-bold text-5xl md:text-7xl text-white uppercase drop-shadow-2xl">
-            Contact Us
-          </h1>
-        </div>
-      </section>
+      {/* Full-height Contact Section */}
+      <section className="relative flex-1 flex flex-col lg:flex-row min-h-screen pt-20">
 
-      {/* Content Section */}
-      <section className="py-24 relative z-10 bg-[#050505]">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="flex flex-col md:flex-row gap-16">
-            <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">Request For Free Quote</h2>
-              <p className="text-gray-400 mb-8">
-                For Business: For Business inquiry fill our feedback form and Phone Number - (+91) 9711 415 164, our team will help you within 24 hours.
-              </p>
-              
-              <form className="space-y-6">
-                <input type="text" placeholder="Your Name" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#00B4D8] transition-colors" />
-                <input type="email" placeholder="Email Address" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#00B4D8] transition-colors" />
-                <input type="tel" placeholder="Phone Number" className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#00B4D8] transition-colors" />
-                <textarea placeholder="Message" rows={4} className="w-full bg-white/5 border border-white/10 px-6 py-4 text-white focus:outline-none focus:border-[#00B4D8] transition-colors"></textarea>
-                <button type="button" className="bg-[#00B4D8] text-white px-10 py-4 font-bold tracking-widest text-sm hover:bg-transparent border border-[#00B4D8] transition-colors w-full">
-                  SUBMIT NOW
-                </button>
-              </form>
+        {/* Full-width Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/company-image-1-min-min-1.jpg"
+            alt="Industrial Background"
+            fill
+            unoptimized
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0077B6]/95 via-[#0077B6]/80 to-[#003d5c]/70"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        {/* Left Side — Info */}
+        <div className="w-full lg:w-5/12 relative z-10 py-16 px-8 md:px-16 flex flex-col justify-center">
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-[2px] bg-white/50"></div>
+              <span className="text-white/80 text-xs font-bold tracking-widest uppercase">GET IN TOUCH</span>
             </div>
-            
-            <div className="w-full md:w-1/2">
-              <div className="p-10 border border-white/10 bg-[#0a0a0a] h-full">
-                <h3 className="text-xl font-bold mb-8 uppercase tracking-wider border-b border-white/10 pb-4">Corporate Office</h3>
-                <ul className="space-y-8">
-                  <li>
-                    <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Address</h4>
-                    <p className="text-white text-lg">Plot No. 353, Sector-68,<br/>IMT Faridabad -121004, Haryana, India</p>
-                  </li>
-                  <li>
-                    <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Phone</h4>
-                    <a href="tel:+919711415164" className="text-white text-lg hover:text-[#00B4D8] block">+91 9711 415 164</a>
-                    <a href="tel:+918053650222" className="text-white text-lg hover:text-[#00B4D8] block">+91 8053 650 222</a>
-                  </li>
-                  <li>
-                    <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Email</h4>
-                    <a href="mailto:info@taplindia.net" className="text-white text-lg hover:text-[#00B4D8] block">info@taplindia.net</a>
-                    <a href="mailto:rahul@taplindia.net" className="text-white text-lg hover:text-[#00B4D8] block">rahul@taplindia.net</a>
-                  </li>
-                </ul>
+
+            <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-[1.1] uppercase">
+              READY TO START YOUR PROJECT?
+            </h1>
+
+            <p className="text-white/80 text-lg font-light leading-relaxed mb-12 max-w-md">
+              Contact us today for a consultation and let&apos;s build something great. For business inquiry, our team will help you within 24 hours.
+            </p>
+
+            {/* Contact Info Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 hover:bg-white/15 transition-all duration-300 group">
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                  <Phone className="text-white w-4 h-4" />
+                </div>
+                <div className="text-white font-light text-sm space-y-1">
+                  <a href="tel:+919711415164" className="block hover:underline">(+91) 9711 415 164</a>
+                  <a href="tel:+918053650222" className="block hover:underline">(+91) 8053 650 222</a>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 hover:bg-white/15 transition-all duration-300 group">
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                  <Mail className="text-white w-4 h-4" />
+                </div>
+                <div className="text-white font-light text-sm space-y-1">
+                  <a href="mailto:info@taplindia.net" className="block hover:underline">info@taplindia.net</a>
+                  <a href="mailto:rahul@taplindia.net" className="block hover:underline">rahul@taplindia.net</a>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 hover:bg-white/15 transition-all duration-300 group">
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                  <MapPin className="text-white w-4 h-4" />
+                </div>
+                <address className="not-italic text-white font-light text-sm leading-relaxed">
+                  Plot No. 353, Sector-68,<br/>
+                  IMT Faridabad - 121004,<br/>
+                  Haryana, India
+                </address>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Right Side — Form */}
+        <div className="w-full lg:w-7/12 relative z-10 py-16 px-8 md:px-16 flex items-center">
+          <div className="w-full max-w-2xl mx-auto bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl shadow-black/50">
+
+            {/* Logo / Brand Header */}
+            <div className="flex items-center justify-center gap-3 mb-8 pb-6 border-b border-white/10">
+              <Image
+                src="/OMlogo.png"
+                alt="TAPL India Logo"
+                width={50}
+                height={50}
+                unoptimized
+                className="object-contain"
+              />
+              <div>
+                <h3 className="font-display font-bold text-xl text-white tracking-wider">TAPL</h3>
+                <p className="text-[#00B4D8] text-[10px] font-bold tracking-[0.2em] uppercase">INDIA</p>
+              </div>
+            </div>
+
+            {isSubmitted ? (
+              <div className="flex flex-col items-center justify-center min-h-[300px] text-center">
+                <div className="w-20 h-20 bg-[#0077B6]/20 rounded-full flex items-center justify-center mb-6">
+                  <CheckCircle2 className="w-10 h-10 text-[#0077B6]" />
+                </div>
+                <h3 className="font-display font-bold text-3xl mb-4 text-white uppercase">MESSAGE SENT</h3>
+                <p className="text-gray-400 mb-8 max-w-sm mx-auto">
+                  Thank you for your interest. Our team will review your requirements and get back to you shortly.
+                </p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="bg-transparent border border-white/20 hover:border-[#0077B6] hover:text-[#0077B6] text-white px-8 py-3 text-xs tracking-widest font-bold uppercase transition-colors"
+                >
+                  SEND ANOTHER MESSAGE
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <input required type="text" className="w-full bg-white/5 border border-white/15 focus:border-[#0077B6] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm rounded-lg" placeholder="Full Name" />
+                  </div>
+                  <div>
+                    <input required type="email" className="w-full bg-white/5 border border-white/15 focus:border-[#0077B6] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm rounded-lg" placeholder="Email Address" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <input type="tel" className="w-full bg-white/5 border border-white/15 focus:border-[#0077B6] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm rounded-lg" placeholder="Phone Number" />
+                  </div>
+                  <div>
+                    <input required type="text" className="w-full bg-white/5 border border-white/15 focus:border-[#0077B6] p-4 text-white placeholder-gray-500 outline-none transition-colors text-sm rounded-lg" placeholder="Company Name" />
+                  </div>
+                </div>
+
+                <div>
+                  <textarea required rows={5} className="w-full bg-white/5 border border-white/15 focus:border-[#0077B6] p-4 text-white placeholder-gray-500 outline-none transition-colors resize-none text-sm rounded-lg" placeholder="Tell us about your project"></textarea>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="group flex items-center justify-center gap-3 transition-all duration-300 bg-[#0077B6] hover:bg-[#005f8a] text-white px-8 py-4 font-bold tracking-widest text-xs w-full uppercase rounded-lg"
+                  >
+                    <span>{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
+                    {!isSubmitting && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 py-4 text-center border-t border-white/10 bg-black/30 backdrop-blur-sm">
+          <p className="text-white/60 text-xs font-bold tracking-[0.3em] uppercase">
+            Industrial Automation &amp; Material-Handling Solutions
+          </p>
         </div>
       </section>
     </main>
