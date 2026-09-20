@@ -72,7 +72,7 @@ export default function CompanyStory() {
               x: '120vw',
               ease: 'none',
               force3D: true,
-              duration: scrollDuration, 
+              duration: scrollDuration * 0.7, 
             }, 0);
         }
       });
@@ -105,6 +105,8 @@ export default function CompanyStory() {
             {
               x: '150vw',
               ease: 'none',
+            force3D: true,
+            duration: 1,
             }, 0);
         }
       });
@@ -183,3 +185,4 @@ export default function CompanyStory() {
 }
 
 useGLTF.preload('/videos/tata_signa_cargo_truck__low_poly_game_ready_pbr.glb');
+

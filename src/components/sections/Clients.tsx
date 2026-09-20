@@ -14,7 +14,7 @@ export default function Clients() {
     gsap.to(marqueeRef.current, {
       xPercent: -50,
       ease: "none",
-      duration: 20,
+      duration: 20, force3D: true,
       repeat: -1
     });
   }, []);
@@ -56,3 +56,4 @@ export default function Clients() {
     </section>
   );
 }
+

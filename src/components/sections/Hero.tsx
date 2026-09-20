@@ -11,7 +11,7 @@ export default function Hero() {
     const tl = gsap.timeline();
     tl.fromTo('.hero-fade', 
       { opacity: 0, y: 30 }, 
-      { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: 'power3.out', delay: 1.5 } // delay for IntroLoader
+      { opacity: 1, y: 0, stagger: 0.15, duration: 1, force3D: true, ease: 'power3.out', delay: 1.5 } // delay for IntroLoader
     );
   }, []);
 
@@ -72,3 +72,4 @@ export default function Hero() {
     </section>
   );
 }
+

@@ -29,7 +29,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
           const obj = { val: 0 };
           gsap.to(obj, {
             val: target,
-            duration: 2,
+            duration: 2, force3D: true,
             ease: 'power2.out',
             onUpdate: () => setCount(Math.floor(obj.val)),
           });
@@ -58,7 +58,7 @@ export default function StatsCounter() {
           y: 0,
           opacity: 1,
           stagger: 0.15,
-          duration: 0.8,
+          duration: 0.8, force3D: true,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -98,3 +98,4 @@ export default function StatsCounter() {
     </section>
   );
 }
+

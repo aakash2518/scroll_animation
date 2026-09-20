@@ -59,7 +59,7 @@ export default function Testimonials() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.6, force3D: true,
           ease: "power3.out"
         }
       );
@@ -161,4 +161,5 @@ export default function Testimonials() {
     </section>
   );
 }
+
 

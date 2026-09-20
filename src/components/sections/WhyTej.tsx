@@ -25,7 +25,7 @@ export default function WhyTej() {
           {
             opacity: 1,
             x: 0,
-            duration: 0.8,
+            duration: 0.8, force3D: true,
             scrollTrigger: {
               trigger: item,
               start: 'top 80%',
@@ -69,3 +69,4 @@ export default function WhyTej() {
     </section>
   );
 }
+
