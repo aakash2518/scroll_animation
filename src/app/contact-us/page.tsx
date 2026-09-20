@@ -21,8 +21,11 @@ export default function ContactUsPage() {
       {/* Full-height Contact Section */}
       <section className="relative flex-1 flex flex-col lg:flex-row min-h-screen pt-20">
 
-        {/* Full-width Background Image */}
-        <div className="absolute inset-0 z-0">
+        {/* Left Side Background — Solid Blue */}
+        <div className="absolute top-0 left-0 w-full lg:w-5/12 h-full z-0 bg-gradient-to-br from-[#003d5c] via-[#005f8a] to-[#0077B6]"></div>
+
+        {/* Right Side Background — Image */}
+        <div className="absolute top-0 right-0 w-full lg:w-7/12 h-full z-0 overflow-hidden">
           <Image
             src="/images/company-image-1-min-min-1.jpg"
             alt="Industrial Background"
@@ -30,8 +33,8 @@ export default function ContactUsPage() {
             unoptimized
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0077B6]/95 via-[#0077B6]/80 to-[#003d5c]/70"></div>
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-[#0a1a2e]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#005f8a] via-transparent to-transparent"></div>
         </div>
 
         {/* Left Side — Info */}
