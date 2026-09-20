@@ -99,12 +99,9 @@ export default function IndustrialHero() {
         src="/videos/hero-bg.webm"
         autoPlay
         muted
+        loop
         playsInline
         preload="auto"
-        onEnded={(e) => {
-          e.currentTarget.currentTime = 0;
-          e.currentTarget.play().catch(() => {});
-        }}
         className="absolute inset-0 w-full h-full object-cover object-center transform-gpu will-change-transform origin-center"
       />
       
