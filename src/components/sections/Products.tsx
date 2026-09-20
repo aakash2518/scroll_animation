@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButton from '../ui/MagneticButton';
+import Image from 'next/image';
 import { ArrowUpRight, X } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +28,7 @@ export default function Products() {
   useEffect(() => {
     if (!containerRef.current || !scrollWrapperRef.current) return;
     
-    const tl = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
@@ -93,11 +94,7 @@ export default function Products() {
                   }`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-black/20 md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#0a0a0a] z-10 pointer-events-none"></div>
-                  <img 
-                    src={prod.image} 
-                    alt={prod.name} 
-                    className="w-full h-full object-cover md:object-contain object-center opacity-80"
-                  />
+                  <Image src={prod.image} alt={prod.name} fill unoptimized className="\" />
                 </div>
               );
             })}
@@ -231,3 +228,4 @@ export default function Products() {
     </section>
   );
 }
+

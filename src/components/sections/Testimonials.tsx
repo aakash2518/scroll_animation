@@ -102,7 +102,7 @@ export default function Testimonials() {
           <div className="w-full max-w-3xl text-center testimonial-content px-4 md:px-16">
             {/* Large Quote Mark */}
             <div className="flex justify-center mb-8">
-              <span className="text-[#0077B6] text-8xl md:text-9xl font-serif leading-none opacity-60 select-none">"</span>
+              <span className="text-[#0077B6] text-8xl md:text-9xl font-serif leading-none opacity-60 select-none">&quot;</span>
             </div>
             
             <p className="text-gray-200 text-lg md:text-2xl leading-relaxed font-light mb-12">
@@ -161,3 +161,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

@@ -34,6 +34,7 @@ export default function CompanyStory() {
           opacity: 1,
           stagger: 0.2,
           duration: 1,
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 70%',
@@ -59,6 +60,7 @@ export default function CompanyStory() {
         tl.to('.word-anim', {
           opacity: 1,
           y: 0,
+          force3D: true,
           stagger: { amount: scrollDuration * 0.8 }, 
           duration: scrollDuration * 0.2,
         }, 0);
@@ -69,6 +71,7 @@ export default function CompanyStory() {
             {
               x: '120vw',
               ease: 'none',
+              force3D: true,
               duration: scrollDuration, 
             }, 0);
         }
@@ -88,6 +91,7 @@ export default function CompanyStory() {
         gsap.to('.word-anim', {
           opacity: 1,
           y: 0,
+          force3D: true,
           stagger: 0.05, 
           scrollTrigger: {
             trigger: sectionRef.current,
