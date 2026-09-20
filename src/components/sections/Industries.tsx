@@ -149,7 +149,7 @@ export default function Industries() {
                 </span>
                 <div className="flex items-center gap-4">
                   {isActive && <div className="w-6 h-[2px] bg-[#0077B6] hidden md:block"></div>}
-                  <h3 className={`font-display font-black text-3xl sm:text-5xl lg:text-7xl uppercase transition-all duration-500 ${isActive ? 'text-white drop-shadow-[0_0_30px_rgba(255,69,0,0.3)]' : 'text-gray-600'}`}>
+                  <h3 className={`font-display font-black text-2xl sm:text-4xl lg:text-5xl uppercase transition-all duration-500 ${isActive ? 'text-white drop-shadow-[0_0_30px_rgba(255,69,0,0.3)]' : 'text-gray-600'}`}>
                     {ind.title}
                   </h3>
                 </div>
