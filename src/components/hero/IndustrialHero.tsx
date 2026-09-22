@@ -15,74 +15,63 @@ export default function IndustrialHero() {
   useEffect(() => {
     if (!containerRef.current || !videoRef.current || !textRef.current || !overlayRef.current) return;
 
-    // Enforce video muted state and autoplay (helps with browser policies)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Enforce video autoplay
     videoRef.current.muted = true;
     videoRef.current.defaultMuted = true;
-    videoRef.current.play().catch((e) => console.log('Autoplay prevented:', e));
+    videoRef.current.play().catch(() => {});
 
-    // Initial load animation
-    const tl = gsap.timeline();
-    tl.to('.hero-reveal', {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      stagger: 0.2,
-      ease: 'power3.out',
-      delay: 0.2
-    });
+    if (prefersReducedMotion) {
+      // Just show everything immediately
+      gsap.set('.hero-line', { y: 0, clipPath: 'inset(0 0 0 0)' });
+      gsap.set('.hero-fade', { opacity: 1, y: 0 });
+      return;
+    }
 
-    // Scroll animation
+    // Removed entrance animations so the page starts fully visible as requested when the video intro ends.
+
+    // Scroll animations
     const ctx = gsap.context(() => {
-      let mm = gsap.matchMedia();
-
-      // Desktop Only Animations
-      mm.add("(min-width: 768px)", () => {
-        // Pinning and zooming
-        gsap.to(videoRef.current, {
-          scale: 1.08,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          }
-        });
-
-        // Text moving up faster than scroll (parallax)
-        gsap.to(textRef.current, {
-          y: -150,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          }
-        });
-      });
-
-      // Darkening overlay
-      gsap.to(overlayRef.current, {
-        opacity: 0.8,
+      // Premium overlapping scroll effect
+      gsap.to(containerRef.current, {
+        scale: 0.95,
+        opacity: 0.5,
+        filter: 'blur(10px)',
+        transformOrigin: 'top center',
         ease: 'none',
+        force3D: true,
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: true,
+          scrub: 1,
+          pin: true,
+          pinSpacing: false // Allows the next section to scroll perfectly over it
         }
       });
 
-      // Fade out scroll indicator
-      gsap.to('.scroll-indicator', {
-        opacity: 0,
+      // Subtle parallax for text inside while pinning
+      gsap.to(textRef.current, {
+        y: 100, // Move down slightly within the pinned container
+        ease: 'none',
+        force3D: true,
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
-          end: '+=200',
+          end: 'bottom top',
+          scrub: 1,
+        }
+      });
+
+      // Fade out bottom elements
+      gsap.to('.scroll-indicator', {
+        opacity: 0,
+        y: -10,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: '+=150',
           scrub: true,
         }
       });
@@ -92,8 +81,8 @@ export default function IndustrialHero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full h-[100svh] md:h-screen overflow-hidden bg-black">
-      {/* Layer 1: Video */}
+    <section ref={containerRef} className="relative z-0 w-full h-[100svh] md:h-screen overflow-hidden bg-black" aria-label="Hero section">
+      {/* Video background */}
       <video
         ref={videoRef}
         src="/videos/hero-bg.webm"
@@ -105,71 +94,87 @@ export default function IndustrialHero() {
         className="absolute inset-0 w-full h-full object-cover object-center transform-gpu will-change-transform origin-center"
       />
       
-      {/* Layer 2: Cinematic Overlay */}
+      {/* Cinematic overlay */}
       <div 
         ref={overlayRef}
-        className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#0a0a0a] opacity-50 z-10"
-      ></div>
+        className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-[#0a0a0a] opacity-40 z-10"
+      />
 
+      {/* Subtle grid texture */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.06] z-20 pointer-events-none mix-blend-overlay" />
 
-      {/* Layer 3: Noise Texture */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 z-20 pointer-events-none mix-blend-overlay"></div>
-
-      {/* Layer 4: Content */}
-      <div className="relative z-30 container mx-auto px-6 h-full flex flex-col justify-center">
-        <div ref={textRef} className="max-w-4xl mt-20">
+      {/* Content */}
+      <div className="relative z-30 container mx-auto px-6 md:px-12 h-full flex flex-col justify-end pb-16 md:pb-24 lg:justify-center lg:pb-0">
+        <div ref={textRef} className="max-w-5xl lg:mt-10">
           
-          <div className="overflow-hidden mb-6">
-            <div className="hero-reveal translate-y-full opacity-0 flex items-center gap-4 will-change-transform">
-              <div className="w-12 h-[1px] bg-[#0077B6]"></div>
-              <span className="text-[#0077B6] font-bold tracking-[0.2em] text-xs uppercase">
-                TEJ AUTOSYSTEM PVT. LTD. | INDUSTRIAL AUTOMATION
+          {/* Label */}
+          <div className="mb-6 md:mb-8 hero-fade">
+            <div className="flex items-center gap-4">
+              <div className="hero-rule w-10 md:w-14 h-[2px] bg-[#0077B6] origin-left" />
+              <span className="text-[#0077B6] font-semibold tracking-[0.25em] text-[10px] md:text-[11px] uppercase">
+                Tej Autosystem Pvt. Ltd.
               </span>
             </div>
           </div>
           
-          <div className="overflow-hidden mb-8">
-            <h1 className="hero-reveal translate-y-full opacity-0 font-display font-bold text-5xl md:text-7xl lg:text-[7.5rem] leading-[1.1] tracking-tight text-white will-change-transform">
-              <span className="block">ENGINEERING</span>
-              <span className="block text-gray-400">THAT MOVES</span>
-              <span className="block">INDUSTRY.</span>
-            </h1>
-          </div>
+          {/* Main heading — line by line reveal */}
+          <h1 className="font-display font-bold text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem] leading-[0.95] tracking-[-0.02em] mb-6 md:mb-8">
+            <span className="block overflow-hidden">
+              <span className="hero-line block will-change-transform text-white">ENGINEERING</span>
+            </span>
+            <span className="block overflow-hidden">
+              <span className="hero-line block will-change-transform text-white/40">THAT MOVES</span>
+            </span>
+            <span className="block overflow-hidden">
+              <span className="hero-line block will-change-transform text-white">INDUSTRY<span className="text-[#0077B6]">.</span></span>
+            </span>
+          </h1>
           
-          <div className="overflow-hidden mb-12">
-            <p className="hero-reveal translate-y-full opacity-0 text-lg md:text-2xl text-gray-300 font-light max-w-2xl leading-relaxed will-change-transform">
-              Industrial automation, conveyor systems and material handling solutions engineered for modern manufacturing.
+          {/* Subtext */}
+          <div className="hero-fade mb-8 md:mb-12">
+            <p className="text-base md:text-xl lg:text-2xl text-white/50 font-light max-w-xl leading-relaxed">
+              Conveyor systems, assembly lines & material handling solutions engineered for modern manufacturing.
             </p>
           </div>
           
-          <div className="overflow-hidden">
-            <div className="hero-reveal translate-y-full opacity-0 flex flex-col sm:flex-row items-start sm:items-center gap-6 will-change-transform">
-              <Link href="#solutions" className="group relative overflow-hidden bg-[#0077B6] text-white px-8 py-4 font-bold tracking-widest text-sm w-full sm:w-auto text-center border border-[#0077B6] transition-colors hover:bg-transparent">
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  EXPLORE SOLUTIONS 
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </span>
-                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
-              </Link>
-              
-              <Link href="/contact-us" className="group relative overflow-hidden bg-transparent text-white px-8 py-4 font-bold tracking-widest text-sm w-full sm:w-auto text-center border border-white/20 transition-all hover:border-white hover:scale-105">
-                <span className="relative z-10">REQUEST A QUOTE</span>
-                <div className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
-              </Link>
-            </div>
+          {/* CTA */}
+          <div className="hero-fade flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <Link 
+              href="/products" 
+              className="group relative overflow-hidden bg-[#0077B6] text-white px-8 py-4 font-bold tracking-[0.15em] text-[11px] w-full sm:w-auto text-center border border-[#0077B6] transition-all duration-300"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-3">
+                EXPLORE SOLUTIONS 
+                <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+              </span>
+              <div className="absolute inset-0 bg-[#005f8a] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
+            </Link>
+            
+            <Link 
+              href="/contact-us" 
+              className="group relative overflow-hidden bg-transparent text-white px-8 py-4 font-bold tracking-[0.15em] text-[11px] w-full sm:w-auto text-center border border-white/20 transition-all duration-300 hover:border-white/40"
+            >
+              <span className="relative z-10">REQUEST A QUOTE</span>
+              <div className="absolute inset-0 bg-white/[0.04] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Bottom Labels */}
-      <div className="absolute bottom-8 left-6 md:left-12 z-30 scroll-indicator">
-        <span className="text-gray-500 font-bold tracking-[0.3em] text-[10px]">EST. 2004</span>
+      {/* Bottom labels */}
+      <div className="absolute bottom-6 left-6 md:left-12 z-30 scroll-indicator">
+        <span className="text-white/30 font-semibold tracking-[0.3em] text-[9px] uppercase">Est. 2004</span>
       </div>
       
-      <div className="absolute bottom-8 right-6 md:right-12 z-30 scroll-indicator">
-        <span className="text-white font-bold tracking-[0.2em] text-[10px] flex items-center gap-2">
-          SCROLL TO EXPLORE <span className="animate-bounce">↓</span>
+      <div className="absolute bottom-6 right-6 md:right-12 z-30 scroll-indicator">
+        <span className="text-white/50 font-semibold tracking-[0.2em] text-[9px] flex items-center gap-2 uppercase">
+          Scroll <span className="inline-block w-[1px] h-4 bg-white/30 animate-pulse" />
         </span>
+      </div>
+
+      {/* Side accent line */}
+      <div className="hidden lg:block absolute left-12 top-1/2 -translate-y-1/2 z-30 scroll-indicator">
+        <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
       </div>
     </section>
   );

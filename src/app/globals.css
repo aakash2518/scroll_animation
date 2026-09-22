@@ -6,6 +6,7 @@
   --color-graphite-700: #1a1a1a;
   --color-graphite-600: #2a2a2a;
   --color-industrial-accent: #0077B6;
+  --color-industrial-light: #00B4D8;
   --color-metallic-light: #e0e0e0;
   --color-metallic-dark: #888888;
   
@@ -24,28 +25,54 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
-    scroll-behavior: smooth;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Skip to content — accessibility */
+  .skip-to-content {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 200;
+    padding: 1rem 2rem;
+    background: var(--color-industrial-accent);
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .skip-to-content:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  /* Focus visible — accessible keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--color-industrial-accent);
+    outline-offset: 2px;
   }
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
     background: #050505;
   }
   ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 4px;
+    background: #222;
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #0077B6;
+    background: var(--color-industrial-accent);
   }
 
   /* Selection */
   ::selection {
-    background: #0077B6;
+    background: var(--color-industrial-accent);
     color: white;
   }
 
@@ -63,8 +90,8 @@
 @layer utilities {
   .bg-grid-pattern {
     background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   }
   
   .glass-panel {
@@ -78,5 +105,86 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Premium section label */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-industrial-accent);
+    flex-shrink: 0;
+  }
+  .section-label span {
+    color: var(--color-industrial-accent);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+  }
+
+  /* Premium divider */
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+  }
+
+  /* Form input premium style */
+  .form-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.25rem;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+  .form-input::placeholder {
+    color: #555;
+    font-weight: 300;
+  }
+  .form-input:focus {
+    border-color: var(--color-industrial-accent);
+    box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Clip reveal animation */
+  .clip-reveal {
+    clip-path: inset(0 100% 0 0);
+    animation: clipReveal 1s ease-out forwards;
+  }
+  @keyframes clipReveal {
+    to { clip-path: inset(0 0 0 0); }
+  }
+
+  /* Fade up utility */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Line draw animation */
+  .line-draw {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .line-draw.visible {
+    transform: scaleX(1);
   }
 }

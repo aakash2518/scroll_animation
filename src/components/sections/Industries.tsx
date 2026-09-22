@@ -6,11 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const industries = [
-  { title: 'LED & LIGHTING', id: '01' },
-  { title: 'ELECTRICAL & ELECTRONICS', id: '02' },
-  { title: 'PHARMACEUTICALS', id: '03' },
-  { title: 'FOOD PROCESSING', id: '04' },
-  { title: 'AUTOMOBILE', id: '05' }
+  { title: 'LED & LIGHTING', id: '01', desc: 'Automated assembly and aging solutions for LED manufacturing and testing.' },
+  { title: 'ELECTRICAL & ELECTRONICS', id: '02', desc: 'Precision conveyor systems for PCB assembly, component handling and testing.' },
+  { title: 'PHARMACEUTICALS', id: '03', desc: 'Hygienic material handling and packaging line automation for pharma facilities.' },
+  { title: 'FOOD PROCESSING', id: '04', desc: 'Food-grade conveyor systems built for safe, efficient processing environments.' },
+  { title: 'AUTOMOBILE', id: '05', desc: 'Heavy-duty assembly lines and material handling for automotive production.' }
 ];
 
 export default function Industries() {
@@ -19,7 +19,6 @@ export default function Industries() {
   const [activeIndex, setActiveIndex] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
-  
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const renderFrame = (frameIndex: number) => {
@@ -53,7 +52,7 @@ export default function Industries() {
     const images: HTMLImageElement[] = [];
     
     for (let i = 0; i < frameCount; i++) {
-      const img = new Image();
+      const img = new window.Image();
       const numStr = i.toString().padStart(2, '0');
       img.src = `/images/application/frame_${numStr}_delay-0.2s.webp`;
       images.push(img);
@@ -69,7 +68,7 @@ export default function Industries() {
     if (!containerRef.current || !scrollWrapperRef.current) return;
     
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
+      gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
@@ -100,9 +99,7 @@ export default function Industries() {
       });
     }, containerRef);
 
-    return () => {
-      ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -111,26 +108,27 @@ export default function Industries() {
       {/* Full Screen Background Canvas */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <canvas ref={canvasRef} className="w-full h-full" />
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.04] pointer-events-none mix-blend-overlay" />
       </div>
 
-      <div className="absolute top-28 md:top-32 left-0 right-0 w-full flex flex-col items-center justify-center z-20 pointer-events-none text-center">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-8 h-[2px] bg-[#0077B6]"></div>
-          <h4 className="text-[#0077B6] font-bold tracking-widest text-xs uppercase drop-shadow-md">APPLICATIONS</h4>
-          <div className="w-8 h-[2px] bg-[#0077B6]"></div>
+      {/* Section Header */}
+      <div className="absolute top-24 md:top-28 left-0 right-0 z-20 pointer-events-none">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="section-label">
+            <span>Applications</span>
+          </div>
+          <h2 className="font-display font-bold text-2xl md:text-4xl leading-tight text-white uppercase">
+            Industries We Serve
+          </h2>
         </div>
-        <h2 className="font-display font-black text-3xl md:text-5xl leading-tight text-white uppercase drop-shadow-lg">
-          OUR APPLICATIONS
-        </h2>
       </div>
 
-      <div ref={scrollWrapperRef} className="container mx-auto px-6 w-full h-full pt-48 pb-12 flex flex-col justify-center relative z-10">
+      <div ref={scrollWrapperRef} className="container mx-auto px-6 md:px-12 w-full h-full pt-44 md:pt-48 pb-12 flex flex-col justify-center relative z-10">
         
-        {/* Staggered Text List */}
-        <div className="w-full md:w-3/4 flex flex-col justify-center gap-6 lg:gap-10 pl-2 lg:pl-10">
+        {/* Industry List */}
+        <div className="w-full md:w-3/4 flex flex-col justify-center gap-4 lg:gap-6">
           {industries.map((ind, i) => {
             const isActive = activeIndex === i;
             const isPast = i < activeIndex;
@@ -138,22 +136,30 @@ export default function Industries() {
             return (
               <div 
                 key={ind.id}
-                className={`transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex items-center gap-4 lg:gap-8 ${
+                className={`transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex items-start gap-4 lg:gap-6 py-2 ${
                   isActive 
-                    ? 'opacity-100 translate-x-8 scale-105 origin-left' 
+                    ? 'opacity-100 translate-x-4 lg:translate-x-8' 
                     : isPast 
-                      ? 'opacity-50 -translate-y-2 scale-90 origin-left'
-                      : 'opacity-50 translate-y-2 scale-90 origin-left'
+                      ? 'opacity-30 -translate-y-1'
+                      : 'opacity-30 translate-y-1'
                 }`}
               >
-                <span className={`font-mono text-sm md:text-lg tracking-widest transition-colors duration-500 drop-shadow-md ${isActive ? 'text-[#0077B6]' : 'text-gray-600'}`}>
+                <span className={`font-mono text-xs md:text-sm tracking-widest transition-colors duration-500 mt-2 flex-shrink-0 ${isActive ? 'text-[#0077B6]' : 'text-white/20'}`}>
                   {ind.id}
                 </span>
-                <div className="flex items-center gap-4">
-                  {isActive && <div className="w-6 h-[2px] bg-[#0077B6] hidden md:block"></div>}
-                  <h3 className={`font-display font-black text-2xl sm:text-4xl lg:text-5xl uppercase transition-all duration-500 ${isActive ? 'text-white drop-shadow-[0_0_30px_rgba(255,69,0,0.3)]' : 'text-gray-600'}`}>
-                    {ind.title}
-                  </h3>
+                <div>
+                  <div className="flex items-center gap-3">
+                    {isActive && <div className="w-5 h-[2px] bg-[#0077B6] hidden md:block flex-shrink-0" />}
+                    <h3 className={`font-display font-bold text-xl sm:text-3xl lg:text-4xl xl:text-5xl uppercase transition-all duration-500 leading-tight ${isActive ? 'text-white' : 'text-white/40'}`}>
+                      {ind.title}
+                    </h3>
+                  </div>
+                  {/* Description — only show for active */}
+                  <div className={`overflow-hidden transition-all duration-500 ${isActive ? 'max-h-20 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                    <p className="text-white/40 text-sm md:text-base font-light max-w-lg leading-relaxed pl-0 md:pl-8">
+                      {ind.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             );
@@ -162,17 +168,17 @@ export default function Industries() {
         
       </div>
 
-      {/* Bottom Progress Bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 h-1 bg-white/5">
+      {/* Progress Bar */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 h-[2px] bg-white/5">
         <div 
-          className="h-full bg-[#0077B6] transition-all duration-100 ease-linear shadow-[0_0_10px_rgba(255,69,0,0.5)]"
+          className="h-full bg-[#0077B6] transition-[width] duration-100 ease-linear"
           style={{ width: `${scrollProgress * 100}%` }}
-        ></div>
+        />
       </div>
 
-      {/* Active industry indicator */}
-      <div className="absolute bottom-8 right-8 z-20 text-right pointer-events-none hidden md:block">
-        <span className="text-[#0077B6] font-mono text-sm tracking-widest">
+      {/* Counter */}
+      <div className="absolute bottom-8 right-6 md:right-12 z-20 text-right pointer-events-none hidden md:block">
+        <span className="text-white/30 font-mono text-xs tracking-widest">
           {String(activeIndex + 1).padStart(2, '0')} / {String(industries.length).padStart(2, '0')}
         </span>
       </div>
